@@ -12,7 +12,7 @@ const messages = [
 ];
 
 const serveIndexPage = (req, res) => {
-  res.render('index', { title: 'Mini Message Board', messages: messages });
+  res.render('layout', { title: 'Mini Message Board', page: 'index', messages: messages });
 }
 
 module.exports = {

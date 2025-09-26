@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Message Board</title>
+</head>
+<body>
+    <header><h2><%= title %></h2></header>
+    <main>
+        <% switch(page) {
+            case "index": %>
+                <%- include('index', { messages: messages}) %>
+                <% break;
+            default: %>
+                <p>No message</p>
+        <% } %>
+    </main>
+    <footer>This is a footer</footer>
+</body>
+</html>
