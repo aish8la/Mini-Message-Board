@@ -1,6 +1,8 @@
 require('dotenv').config();
 const path = require('node:path');
 
+const indexRoute = require('./routes/routes');
+
 const express = require('express');
 const app = express();
 
@@ -12,6 +14,9 @@ app.set('view engine', 'ejs');
 
 /* Set the root views path for views */
 app.set('views', path.join(__dirname, 'views'));
+
+/* Routes */
+app.get('/', indexRoute.serveIndexPage);
 
 app.listen(PORT, (err) => {
     if(err) throw err;
