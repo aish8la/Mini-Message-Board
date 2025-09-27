@@ -12,6 +12,9 @@
             case "index": %>
                 <%- include('index', { messages: messages}) %>
                 <% break;
+            case 'newMessageForm': %>
+                <%- include('newMessageForm') %>
+                <% break;
             default: %>
                 <p>No message</p>
         <% } %>

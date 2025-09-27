@@ -15,6 +15,11 @@ const serveIndexPage = (req, res) => {
   res.render('layout', { title: 'Mini Message Board', page: 'index', messages: messages });
 }
 
+const goToNewMessageForm = (req, res) => {
+  res.render('newMessageForm', { title: 'New Message', page: 'newMessageForm' });
+}
+
 module.exports = {
-  serveIndexPage: serveIndexPage
+  serveIndexPage: serveIndexPage,
+  goToNewMessageForm: goToNewMessageForm
 };
