@@ -10,13 +10,13 @@
     <main>
         <% switch(page) {
             case "index": %>
-                <%- include('index', { messages: messages}) %>
+                <%- include('index', { messages: messages, formatDate: formatDate}) %>
                 <% break;
             case 'newMessageForm': %>
                 <%- include('newMessageForm') %>
                 <% break;
             case 'message': %>
-                <%- include('message', { message: message }) %>
+                <%- include('message', { message: message, formatDate: formatDate }) %>
                 <% break;
             default: %>
                 <p>No message</p>

@@ -1,3 +1,5 @@
+const formatDate = require("../utils/formatDate");
+
 const messages = [
   {
     msgId: crypto.randomUUID(),
@@ -14,7 +16,7 @@ const messages = [
 ];
 
 const serveIndexPage = (req, res) => {
-  res.render('layout', { title: 'Mini Message Board', page: 'index', messages: messages });
+  res.render('layout', { title: 'Mini Message Board', page: 'index', messages: messages, formatDate: formatDate });
 }
 
 const goToNewMessageForm = (req, res) => {
@@ -35,7 +37,7 @@ const getMessageById = (req, res) => {
     error.statusCode = 404;
     throw  error;
   }
-  res.render('layout', { title: 'Message', page: 'message', message: message});
+  res.render('layout', { title: 'Message', page: 'message', message: message, formatDate: formatDate });
 }
 
 const errorPage = (err, req, res, next) => {

@@ -4,7 +4,7 @@
         <li>
             <span><%= message.text %></span>
             <span><%= message.user %></span>
-            <span><%= message.added %></span>
+            <span><%= formatDate(message.added) %></span>
             <a href="<%= message.msgId%>">Open</a>
         </li>
     <% }) %>
