@@ -15,9 +15,14 @@ app.set('view engine', 'ejs');
 /* Set the root views path for views */
 app.set('views', path.join(__dirname, 'views'));
 
+/* Set express middleware to parse requests with URLEncoded payloads */
+app.use(express.urlencoded({ extended: true }));
+
 /* Routes */
 app.get('/new', indexRoute.goToNewMessageForm);
 app.get('/', indexRoute.serveIndexPage);
+
+app.post('/new', indexRoute.createNewMessage);
 
 app.listen(PORT, (err) => {
     if(err) throw err;

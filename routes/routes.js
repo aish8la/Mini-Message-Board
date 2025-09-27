@@ -19,7 +19,14 @@ const goToNewMessageForm = (req, res) => {
   res.render('newMessageForm', { title: 'New Message', page: 'newMessageForm' });
 }
 
+const createNewMessage = (req, res) => {
+  const message = req.body;
+  messages.push({ text: message.message, user: message.name, added: new Date() });
+  res.redirect('/');
+}
+
 module.exports = {
   serveIndexPage: serveIndexPage,
-  goToNewMessageForm: goToNewMessageForm
+  goToNewMessageForm: goToNewMessageForm,
+  createNewMessage: createNewMessage
 };
