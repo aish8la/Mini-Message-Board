@@ -30,12 +30,23 @@ const createNewMessage = (req, res) => {
 const getMessageById = (req, res) => {
   const id = req.params.msgId;
   const message = messages.find(message => message.msgId === id);
+  if (!message) {
+    const error = new Error("Not Found");
+    error.statusCode = 404;
+    throw  error;
+  }
   res.render('message', { title: 'Message', page: 'message', message: message});
+}
+
+const errorPage = (err, req, res, next) => {
+  res.status(err.statusCode || 500);
+  res.render('error', { error: err });
 }
 
 module.exports = {
   serveIndexPage: serveIndexPage,
   goToNewMessageForm: goToNewMessageForm,
   createNewMessage: createNewMessage,
-  getMessageById: getMessageById
+  getMessageById: getMessageById,
+  errorPage: errorPage
 };

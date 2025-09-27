@@ -25,6 +25,8 @@ app.get('/', indexRoute.serveIndexPage);
 
 app.post('/new', indexRoute.createNewMessage);
 
+app.use(indexRoute.errorPage);
+
 app.listen(PORT, (err) => {
     if(err) throw err;
     console.log(`Server started on Port: ${PORT}`);
