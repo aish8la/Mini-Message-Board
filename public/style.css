@@ -32,7 +32,7 @@ body {
 
 .container {
     margin: 0 auto;
-    padding: var(--spacing3) var(--spacing4);
+    padding: var(--spacing2) var(--spacing4);
     max-width: 1280px;
     display: flex;
     flex-direction: column;
@@ -51,6 +51,7 @@ li {
 header {
     border-bottom: 1px solid var(--border-light);
     padding: var(--spacing3) 0;
+    margin-bottom: var(--spacing5);
 }
 
 .add-button {

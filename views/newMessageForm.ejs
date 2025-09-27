@@ -1,5 +1,9 @@
-<nav><a href="/">Back To Home</a></nav>
+<a class="back-button" href="/">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-left-icon lucide-chevron-left"><path d="m15 18-6-6 6-6"/></svg>
+    Back to Message Board
+</a>
 <form method="post" action="/new">
+    <h2><%= title %></h2>
     <label for="name">
         Name:
         <input type="text" id="name" name="name" required>

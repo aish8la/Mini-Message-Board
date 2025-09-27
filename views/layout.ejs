@@ -12,17 +12,17 @@
 <body>
     <header>
         <div class="container">
-            <h1><%= title %></h1>
+            <h1>Mini Message Board</h1>
         </div>
     </header>
     <main>
         <div class="container">
             <% switch(page) {
                 case "index": %>
-                    <%- include('index', { messages: messages, formatDate: formatDate}) %>
+                    <%- include('index', { title: title, messages: messages, formatDate: formatDate}) %>
                     <% break;
                 case 'newMessageForm': %>
-                    <%- include('newMessageForm') %>
+                    <%- include('newMessageForm', { title: title }) %>
                     <% break;
                 case 'message': %>
                     <%- include('message', { message: message, formatDate: formatDate }) %>
