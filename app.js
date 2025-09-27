@@ -15,6 +15,10 @@ app.set('view engine', 'ejs');
 /* Set the root views path for views */
 app.set('views', path.join(__dirname, 'views'));
 
+/* Set static asset paths */
+const assestPath = path.join(__dirname, 'public');
+app.use(express.static(assestPath));
+
 /* Set express middleware to parse requests with URLEncoded payloads */
 app.use(express.urlencoded({ extended: true }));
 
