@@ -15,6 +15,9 @@
             case 'newMessageForm': %>
                 <%- include('newMessageForm') %>
                 <% break;
+            case 'message': %>
+                <%- include('message', { message: message }) %>
+                <% break;
             default: %>
                 <p>No message</p>
         <% } %>
