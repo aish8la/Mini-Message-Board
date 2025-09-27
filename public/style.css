@@ -188,3 +188,39 @@ label {
     min-height: 150px;
     resize: vertical;
 }
+
+.return-to-home-button {
+    background-color: var(--primary-color);
+    color: var(--background-light);
+    padding: var(--spacing3) var(--spacing3);
+    border: none;
+    border-radius: var(--spacing2); 
+    margin-top: auto;
+    text-align: center;
+    font-weight: 700;
+    display: inline-block;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.return-to-home-button:hover {
+    cursor: pointer;
+    background-color: var(--secondary-color);
+}
+
+.error-page {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing5);
+    align-items: center;
+    padding: var(--spacing4) 0;
+}
+
+.error-code {
+    font-size: 4rem;
+}
+
+.error-message {
+    font-size: 1.5rem;
+    color: var(--text-light-secondary);
+    font-weight: 500;
+}
