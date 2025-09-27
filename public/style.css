@@ -34,6 +34,9 @@ body {
     margin: 0 auto;
     padding: var(--spacing3) var(--spacing4);
     max-width: 1280px;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing4);
 }
 
 a {
@@ -47,6 +50,7 @@ li {
 
 header {
     border-bottom: 1px solid var(--border-light);
+    padding: var(--spacing3) 0;
 }
 
 .add-button {
@@ -60,7 +64,7 @@ header {
     right: var(--spacing4);
     display: flex;
     align-items: center;
-    gap: var(--spacing1);
+    gap: var(--spacing2);
     box-shadow: 0px 4px 4px #00000030, 0px 12px 12px #00000015;
     transition: background-color 0.3s ease-in-out;
 }
@@ -93,7 +97,7 @@ header {
     display: flex;
     flex-direction: column;
     gap: var(--spacing5);
-    transition: all 0.3s ease-in-out;
+    transition: box-shadow 0.3s ease-in-out;
 }
 
 .card:hover {
@@ -118,4 +122,13 @@ header {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(clamp(250px, 30%, 420px), 1fr));
     gap: var(--spacing3);
+}
+
+.view-post-card {
+    padding: var(--spacing5);
+    border: 1px solid var(--border-light);
+    border-radius: var(--spacing2);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing5);
 }

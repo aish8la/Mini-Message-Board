@@ -1,6 +1,10 @@
-<nav><a href="/">Back To Home</a></nav>
-<div>
+<a class="back-button" href="/">
+    Back to Message Board
+</a>
+<div class="view-post-card">
+    <div class="card-header">
+        <h2><%= message.user %></h2>
+        <span class="date"><%= formatDate(message.added) %></span>
+    </div>
     <span><%= message.text %></span>
-    <span><%= message.user %></span>
-    <span><%= formatDate(message.added) %></span>
 </div>
