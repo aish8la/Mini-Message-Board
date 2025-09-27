@@ -141,3 +141,50 @@ header {
     align-items: center;
     gap: var(--spacing2);
 }
+
+.form-card {
+    padding: var(--spacing5);
+    border: 1px solid var(--border-light);
+    border-radius: var(--spacing2);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing5);
+}
+
+.submit-post-button {
+    background-color: var(--primary-color);
+    color: var(--background-light);
+    padding: var(--spacing3) var(--spacing3);
+    border: none;
+    border-radius: var(--spacing2); 
+    width: 100%;
+    margin-top: auto;
+    text-align: center;
+    font-weight: 700;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.submit-post-button:hover {
+    cursor: pointer;
+    background-color: var(--secondary-color);
+}
+
+label {
+    display: block;
+    color: var(--text-light-secondary);
+    font-weight: 500;
+}
+
+.form-input, .form-textarea {
+    width: 100%;
+    border: 1px solid var(--border-light);
+    border-radius: var(--spacing2);
+    padding: var(--spacing2) var(--spacing3);
+    font: var(--p);
+    color: var(--text-light-primary);
+}
+
+.form-textarea {
+    min-height: 150px;
+    resize: vertical;
+}
