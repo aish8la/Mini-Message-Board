@@ -18,7 +18,7 @@ const serveIndexPage = (req, res) => {
 }
 
 const goToNewMessageForm = (req, res) => {
-  res.render('newMessageForm', { title: 'New Message', page: 'newMessageForm' });
+  res.render('layout', { title: 'New Message', page: 'newMessageForm' });
 }
 
 const createNewMessage = (req, res) => {
@@ -35,7 +35,7 @@ const getMessageById = (req, res) => {
     error.statusCode = 404;
     throw  error;
   }
-  res.render('message', { title: 'Message', page: 'message', message: message});
+  res.render('layout', { title: 'Message', page: 'message', message: message});
 }
 
 const errorPage = (err, req, res, next) => {
