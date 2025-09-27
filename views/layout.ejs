@@ -27,6 +27,9 @@
                 case 'message': %>
                     <%- include('message', { message: message, formatDate: formatDate }) %>
                     <% break;
+                case 'error': %>
+                    <%- include('error', { error: error }) %>
+                    <% break;
                 default: %>
                     <p>No message</p>
             <% } %>

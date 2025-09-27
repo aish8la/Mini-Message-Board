@@ -63,7 +63,7 @@ const getMessageById = (req, res) => {
   const id = req.params.msgId;
   const message = messages.find(message => message.msgId === id);
   if (!message) {
-    const error = new Error("Not Found");
+    const error = new Error('Oops! The page you are looking for does not exist. It might have been moved or deleted.');
     error.statusCode = 404;
     throw  error;
   }
@@ -72,7 +72,7 @@ const getMessageById = (req, res) => {
 
 const errorPage = (err, req, res, next) => {
   res.status(err.statusCode || 500);
-  res.render('error', { error: err });
+  res.render('layout', { page: 'error', error: err });
 }
 
 module.exports = {
