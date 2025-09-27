@@ -1,11 +1,16 @@
-<nav><a href="new">New Message</a></nav>
-<ul>
+<ul class="message-grid">
     <% messages.map(message => { %> 
-        <li>
+        <li class="card">
+            <div class="card-header">
+                <span class="author"><%= message.user %></span>
+                <span class="date"><%= formatDate(message.added) %></span>
+            </div>
             <span><%= message.text %></span>
-            <span><%= message.user %></span>
-            <span><%= formatDate(message.added) %></span>
-            <a href="<%= message.msgId%>">Open</a>
+            <a class="view-post-button" href="<%= message.msgId%>">View Post</a>
         </li>
     <% }) %>
 </ul>
+<a href="new" class="add-button">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-plus-icon lucide-plus"><path d="M5 12h14"/><path d="M12 5v14"/></svg>
+    Add
+</a>
