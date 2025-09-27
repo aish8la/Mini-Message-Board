@@ -20,6 +20,7 @@ app.use(express.urlencoded({ extended: true }));
 
 /* Routes */
 app.get('/new', indexRoute.goToNewMessageForm);
+app.get('/:msgId', indexRoute.getMessageById);
 app.get('/', indexRoute.serveIndexPage);
 
 app.post('/new', indexRoute.createNewMessage);
