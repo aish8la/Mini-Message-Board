@@ -12,6 +12,36 @@ const messages = [
     text: "Hello World!",
     user: "Charles",
     added: new Date()
+  },
+  {
+    msgId: crypto.randomUUID(),
+    text: "Hey everyone, just wanted to check in and see how the project is going. Have we finalized the design phase yet, or are we still gathering feedback from the team?",
+    user: "Sophia",
+    added: new Date()
+  },
+  {
+    msgId: crypto.randomUUID(),
+    text: "Good morning! I spent most of last night debugging the API calls, and I think the main issue was related to the request headers not being set correctly. Should be fixed now.",
+    user: "David",
+    added: new Date()
+  },
+  {
+    msgId: crypto.randomUUID(),
+    text: "Quick reminder: The client meeting has been rescheduled to Friday at 3 PM. Please update your calendars so we can prepare the presentation in time.",
+    user: "Emma",
+    added: new Date()
+  },
+  {
+    msgId: crypto.randomUUID(),
+    text: "I read through the documentation for the new library we're planning to use. It seems straightforward, but there are some tricky parts when it comes to state management.",
+    user: "Liam",
+    added: new Date()
+  },
+  {
+    msgId: crypto.randomUUID(),
+    text: "Just wanted to share a quick win: The deployment pipeline is now fully automated! No more manual builds or late-night hotfix pushes.",
+    user: "Olivia",
+    added: new Date()
   }
 ];
 
