@@ -18,7 +18,17 @@ async function createNewMessage(username, message) {
     }
 };
 
+async function getMessageById(msg_id) {
+    try {
+        const res = await pool.query('SELECT * FROM message_board WHERE msg_id = $1', [msg_id]);
+        return res.rows[0];
+    } catch (error) {
+        throw error;
+    }
+}
+
 module.exports = {
     getAllMessages,
     createNewMessage,
+    getMessageById,
 };

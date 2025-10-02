@@ -61,9 +61,9 @@ async function messagesCreatePost(req, res) {
   res.redirect('/');
 }
 
-function messagesFindByIdGet(req, res) {
+async function messagesFindByIdGet(req, res) {
   const id = req.params.msgId;
-  const message = messages.find(message => message.msgId === id);
+  const message = await messagesQuery.getMessageById(id);
   if (!message) {
     const error = new Error('Oops! The page you are looking for does not exist. It might have been moved or deleted.');
     error.statusCode = 404;
