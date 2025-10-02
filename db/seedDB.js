@@ -2,15 +2,13 @@ const { Client } = require('pg');
 
 const dbUrl = process.argv[2];
 
-console.log(dbUrl);
-
 if(!dbUrl) {
     console.error("Please provide a database URL as an argument");
     process.exit(1);
 };
 
 const SQL = `CREATE TABLE IF NOT EXISTS message_board (
-    msgId INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+    msg_id INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
     username VARCHAR ( 50 ),
     message TEXT,
     date_added TIMESTAMPTZ DEFAULT CURRENT_TIMESTAMP 
