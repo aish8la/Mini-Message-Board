@@ -1,3 +1,4 @@
+const messagesQuery = require('../db/messagesQuery');
 const formatDate = require("../utils/formatDate");
 
 const messages = [
@@ -45,7 +46,8 @@ const messages = [
   }
 ];
 
-function allMessagesGet(req, res) {
+async function allMessagesGet(req, res) {
+  const messages = await messagesQuery.getAllMessages();
   res.render('layout', { title: 'Message Board', page: 'index', messages: messages, formatDate: formatDate });
 }
 
