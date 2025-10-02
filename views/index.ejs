@@ -3,11 +3,11 @@
     <% messages.map(message => { %> 
         <li class="card">
             <div class="card-header">
-                <span class="author"><%= message.user %></span>
-                <span class="date"><%= formatDate(message.added) %></span>
+                <span class="author"><%= message.username %></span>
+                <span class="date"><%= formatDate(message.date_added) %></span>
             </div>
-            <span><%= message.text %></span>
-            <a class="view-post-button" href="<%= message.msgId%>">View Post</a>
+            <span><%= message.message %></span>
+            <a class="view-post-button" href="<%= message.msg_id%>">View Post</a>
         </li>
     <% }) %>
 </ul>
