@@ -45,21 +45,21 @@ const messages = [
   }
 ];
 
-const serveIndexPage = (req, res) => {
+function allMessagesGet(req, res) {
   res.render('layout', { title: 'Message Board', page: 'index', messages: messages, formatDate: formatDate });
 }
 
-const goToNewMessageForm = (req, res) => {
+function messagesCreateGet(req, res) {
   res.render('layout', { title: 'Create New Message', page: 'newMessageForm' });
 }
 
-const createNewMessage = (req, res) => {
+function messagesCreatePost(req, res) {
   const message = req.body;
   messages.push({ msgId: crypto.randomUUID(), text: message.message, user: message.name, added: new Date() });
   res.redirect('/');
 }
 
-const getMessageById = (req, res) => {
+function messagesFindByIdGet(req, res) {
   const id = req.params.msgId;
   const message = messages.find(message => message.msgId === id);
   if (!message) {
@@ -70,15 +70,9 @@ const getMessageById = (req, res) => {
   res.render('layout', { page: 'message', message: message, formatDate: formatDate });
 }
 
-const errorPage = (err, req, res, next) => {
-  res.status(err.statusCode || 500);
-  res.render('layout', { page: 'error', error: err });
-}
-
 module.exports = {
-  serveIndexPage: serveIndexPage,
-  goToNewMessageForm: goToNewMessageForm,
-  createNewMessage: createNewMessage,
-  getMessageById: getMessageById,
-  errorPage: errorPage
+  allMessagesGet,
+  messagesCreateGet,
+  messagesCreatePost,
+  messagesFindByIdGet,
 };

@@ -1,7 +1,7 @@
 require('dotenv').config();
 const path = require('node:path');
-
-const indexRoute = require('./routes/routes');
+const messagesRouter = require('./routes/messagesRouter');
+const errorMiddleware = require('./controllers/errorMiddleware');
 
 const express = require('express');
 const app = express();
@@ -23,13 +23,9 @@ app.use(express.static(assestPath));
 app.use(express.urlencoded({ extended: true }));
 
 /* Routes */
-app.get('/new', indexRoute.goToNewMessageForm);
-app.get('/:msgId', indexRoute.getMessageById);
-app.get('/', indexRoute.serveIndexPage);
+app.use('/', messagesRouter);
 
-app.post('/new', indexRoute.createNewMessage);
-
-app.use(indexRoute.errorPage);
+app.use(errorMiddleware);
 
 app.listen(PORT, (err) => {
     if(err) throw err;
