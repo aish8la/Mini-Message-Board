@@ -55,9 +55,9 @@ function messagesCreateGet(req, res) {
   res.render('layout', { title: 'Create New Message', page: 'newMessageForm' });
 }
 
-function messagesCreatePost(req, res) {
+async function messagesCreatePost(req, res) {
   const message = req.body;
-  messages.push({ msgId: crypto.randomUUID(), text: message.message, user: message.name, added: new Date() });
+  await messagesQuery.createNewMessage( message.name, message.message);
   res.redirect('/');
 }
 

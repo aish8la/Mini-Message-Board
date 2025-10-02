@@ -9,6 +9,16 @@ async function getAllMessages() {
     }
 };
 
+async function createNewMessage(username, message) {
+    try {
+        const res = await pool.query(`INSERT INTO message_board (username, message) 
+            VALUES ($1, $2)`, [username, message]);
+    } catch (error) {
+        throw error;
+    }
+};
+
 module.exports = {
     getAllMessages,
+    createNewMessage,
 };
