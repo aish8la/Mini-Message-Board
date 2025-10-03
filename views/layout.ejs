@@ -22,7 +22,7 @@
                     <%- include('index', { title: title, messages: messages, formatDate: formatDate}) %>
                     <% break;
                 case 'newMessageForm': %>
-                    <%- include('newMessageForm', { title: title }) %>
+                    <%- include('newMessageForm', { title: title, formError: formError }) %>
                     <% break;
                 case 'message': %>
                     <%- include('message', { message: message, formatDate: formatDate }) %>
