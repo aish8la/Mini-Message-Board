@@ -5,7 +5,7 @@
 <form class="form-card" method="post" action="/new">
     <h2><%= title %></h2>
     <% if(formError) { %>
-        <ul>
+        <ul class="error-container">
             <% formError.map(error => { %>
                 <li><%= error.msg %></li>
             <% }); %>

@@ -12,6 +12,8 @@
     --text-light-secondary: #6b7280;
     --border-light: #e5e7eb;
     --card-footer-light: #f9fafb;
+    --error-color-dark: #ef4444;
+    --error-color-light: rgba(239, 68, 68, 0.1);
     --ff: 'Inter', sans-serif;
     --p: 1rem/1.5em var(--ff);
     --h1: 600 3rem/1.2em var(--ff2);
@@ -187,6 +189,22 @@ label {
 .form-textarea {
     min-height: 150px;
     resize: vertical;
+}
+
+.error-container {
+    background-color: var(--error-color-light);
+    color: var(--error-color-dark);
+    font-weight: 600;
+    width: 100%;
+    border: 1px solid var(--error-color-dark);
+    padding: var(--spacing4);
+    padding-left: var(--spacing5);
+    border-radius: var(--spacing2);
+
+    li {
+      margin-bottom: var(--spacing1);
+      list-style-type: disc;
+    }
 }
 
 .return-to-home-button {
