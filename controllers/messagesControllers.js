@@ -7,7 +7,7 @@ async function allMessagesGet(req, res) {
 }
 
 function messagesCreateGet(req, res) {
-  res.render('layout', { title: 'Create New Message', page: 'newMessageForm' });
+  res.render('layout', { title: 'Create New Message', page: 'newMessageForm', formError: null });
 }
 
 async function messagesCreatePost(req, res) {
@@ -20,7 +20,7 @@ async function messagesFindByIdGet(req, res) {
   const id = req.params.msgId;
   const message = await messagesQuery.getMessageById(id);
   if (!message) {
-    const error = new Error('Oops! The page you are looking for does not exist. It might have been moved or deleted.');
+    const error = new Error('Oops! The message you are looking for does not exist.');
     error.statusCode = 404;
     throw  error;
   }
